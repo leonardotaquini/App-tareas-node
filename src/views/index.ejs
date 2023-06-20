@@ -1,0 +1,111 @@
+<%- include('./template/head') %>
+<div class="vh-100"> 
+    <nav class="navbar bg-dark">
+        <h1 class="text-white text-center w-100">Aplicacion de tareas</h1>
+    </nav>
+    <div class="m-5 d-flex justify-content-around align-items-center">
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Crear Tarea</button>
+    
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-dark mostrar_tareas" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Mostrar Tareas
+        </button>
+    </div>
+    <div class="tareas">
+    
+      
+      <!--Lista Tareas -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Tareas</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody class="listadoTareas">
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="crear-tarea">  
+      <!-- Crear Tareas -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Nueva Tarea</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">Titulo</label>
+                  <input type="text" class="form-control" id="tarea_nombre">
+                </div>
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label">Descripcion:</label>
+                  <textarea class="form-control" id="tarea_descripcion"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary agregar_tarea" data-bs-dismiss="modal">Agregar</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    </div>
+
+    <div class="modificar-tarea">
+      <div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabelEdit" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabelEdit">Modificar Tarea</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                    <input type="hidden" class="form-control" id="id">
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Titulo</label>
+                    <input type="text" class="form-control" id="titulo">
+                  </div>
+                  <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Descripcion:</label>
+                    <textarea class="form-control" id="descripcion"></textarea>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary btn-modificar" data-bs-dismiss="modal">Modificar</button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+<script src="/js/lista_tareas.js"></script>
+
+<%- include('./template/headEnd') %>
